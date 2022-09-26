@@ -1,4 +1,7 @@
+import java.util.Arrays;
 import java.util.Random;
+import java.util.Collections;
+
 
 public class JavaPuzzles {
 
@@ -20,13 +23,14 @@ public class JavaPuzzles {
         return letters[randIndex];
     }
 
-    //generate password
+    //generate password but with number too
     public static String generatePassword() {
         String password = "";
-        for (int i = 0; i < 10; i++) {
-            password += getRandomLetter();
+        Random rand = new Random();
+        for (int i = 0; i < 5; i++) {
+            password = password + getRandomLetter() +  rand.nextInt(100);
         }
-        return password += getTenRolls();
+        return password;
     }
 
     //long password
